@@ -10,11 +10,9 @@ use App\Models\DiscQuestionTest;
 class Disc extends BaseController
 {
     use ResponseTrait;
-    private $users;
     private $questionTest;
     public function __construct()
     {
-        $this->users = new UsersModel();
         $this->questionTest = new DiscQuestionTest();
     }
     public function questionTest()

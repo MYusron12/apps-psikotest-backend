@@ -40,7 +40,7 @@ class Auth extends BaseController
         $token = JWT::encode($payload, $key, 'HS256');
         $response = [
             'message' => 'Login success',
-            'data' => $user,
+            'user' => $user,
             'token' => $token
         ];
         return $this->respond($response, 200);
