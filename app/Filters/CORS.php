@@ -15,7 +15,11 @@ class CORS implements FilterInterface
         $response->setHeader('Access-Control-Allow-Origin', '*');
         $response->setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $response->setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-        return $request;
+        // return $request;
+        $method = $_SERVER['REQUEST_METHOD'];
+        if ($method == "OPTIONS") {
+        die();
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
