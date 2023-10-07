@@ -4,25 +4,21 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DiscQuestionTest extends Model
+class UserRoleModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'disc_question_test';
+    protected $table            = 'user_role';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'squence', 
-        'describe_personality_1',
-        'describe_personality_2',
-        'describe_personality_3',
-        'describe_personality_4',
+        'role'
     ];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

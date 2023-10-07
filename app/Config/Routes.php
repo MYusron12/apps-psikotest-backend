@@ -7,10 +7,11 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->group('api', /* ['filter' => 'cors'], */ function($routes){
+$routes->group('api', ['filter' => 'cors'], function($routes){
     $routes->post('register', 'Auth::register');
     $routes->post('login', 'Auth::login');
-    $routes->get('users', 'Users::index'/* , ['filter' => 'authFilter'] */);
-    $routes->get('disc-question-test', 'Disc::questionTest'/* , 
-    ['filter' => 'authFilter'] */);
+    $routes->get('users', 'Users::index');
+    $routes->get('disc-question-test', 'Disc::discQuestionTest');
+    $routes->post('disc-answer', 'Disc::discAnswer');
+    $routes->get('user-menu', 'MenuManagement::userMenu');
 });
